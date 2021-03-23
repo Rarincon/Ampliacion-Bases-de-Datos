@@ -14,8 +14,7 @@
 					echo "<td><a href='index.html' style='color:#FFFFFF;'>Inicio</a></td>";
 					echo "<td><a href='marcas.html' style='color:#FFFFFF;'>Marcas</a></td";
 					echo "<td><a href='categorias.html' style='color:#FFFFFF;'>Categorias</a></td>";
-				</tr>
-			</table>
+				echo"</tr></table>";
 			?>
 		</div>
 	</div>

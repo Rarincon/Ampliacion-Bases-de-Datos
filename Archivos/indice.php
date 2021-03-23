@@ -6,9 +6,8 @@
 	<title>sidebarIzq</title>
 </head>
 <body>
-	<div id="sidebar-left">
-		<h3>Navegación</h3>
-		<ul>
+	<div id="indice">
+		<ul id="button">
 			<li><a href="index.php">Inicio</a></li>
 			<li><a href="contenido.php">Ver contenido</a></li>
 			<li><a href="admin.php">Administrar</a></li>

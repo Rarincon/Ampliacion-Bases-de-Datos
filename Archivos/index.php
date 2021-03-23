@@ -14,7 +14,7 @@
 		//session_start();
 		
 		require("cabecera.php");
-		require("sidebarIzq.php");
+		require("indice.php");
 	?>
 	
 	<div id="contenido">
