@@ -7,15 +7,15 @@
 </head>
 <body>
 	<div id="cabecera">
-		<h1>Mi gran página web</h1>
-		<div class="saludo">
+		<div class="cabecera">
 			<?php
-				if (isset($_SESSION["login"]) && ($_SESSION["login"]==true)) {
-					echo "Bienvenido, {$_SESSION['nombre']} <a href='logout.php'>Salir</a>";
-				}
-				else {
-					echo "Usuario desconocido. <a href='login.php'>Login</a>";
-				}
+				echo "<table class='center'>";
+				echo "<tr>";
+					echo "<td><a href='index.html' style='color:#FFFFFF;'>Inicio</a></td>";
+					echo "<td><a href='marcas.html' style='color:#FFFFFF;'>Marcas</a></td";
+					echo "<td><a href='categorias.html' style='color:#FFFFFF;'>Categorias</a></td>";
+				</tr>
+			</table>
 			?>
 		</div>
 	</div>
