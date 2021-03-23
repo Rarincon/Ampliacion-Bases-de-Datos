@@ -3,7 +3,8 @@ body {
 }
 
 div#contenedor {
-	width: 900px;
+	width: 1700px;
+	height: 600px;
 	margin: auto;
 	border: 1px solid black;
 	background-color: #aaaaaa;
@@ -12,16 +13,11 @@ div#contenedor {
 
 div#cabecera {
 	padding: 30px;
-	height: 100px;
+	width: 1700px;
+	height: 50px;
 	background-color: #303030;
 	color: white;
 }
-
-div#cabecera a, div#cabecera a:visited {
-	color: white;
-	font-weight: bold;
-	text-decoration: none;
-} 
 
 div#cabecera a:hover {
 	color: red;
@@ -33,8 +29,8 @@ div#cabecera a:hover {
 div#sidebar-left {
 	padding: 10px;
 	float: left;
-	width: 170px;
-	height: 400px;
+	width: 200px;
+	height: 600px;
 	background-color: #dddddd;
 }
 
@@ -49,19 +45,10 @@ div#sidebar-left a:hover {
 	text-decoration: underline;
 } 
 
-
-div#sidebar-right {
-	padding: 10px;
-	float: right;
-	width: 170px;
-	height: 400px;
-	background-color: #dddddd;
-}
-
 div#contenido {
 	padding: 10px;
 	float: left;
-	min-height: 600px;
+	min-height: 1500px;
 	width: 500px;
 	background-color: white;
 }
@@ -69,7 +56,7 @@ div#contenido {
 div#pie {
 	clear: both;
 	padding: 20px;
-	background-color: #303030;
+	background-color: #1EF5CC;
 	color: white;
 	text-align: center;
 }

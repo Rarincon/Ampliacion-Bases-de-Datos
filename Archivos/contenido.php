@@ -27,7 +27,7 @@
 		</div>
 		
 		<?php
-			include("sidebarDer.php");
+			//include("sidebarDer.php");
 			include("pie.php");
 		?>
 	</div>

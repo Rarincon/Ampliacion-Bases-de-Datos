@@ -7,7 +7,8 @@
 </head>
 <body>
 	<div id="pie">
-		Pie de página
+		Practica ampliacion bases de datos</br>
+		Univerdidad Complutense</br>
 	</div>
 </body>
 </html>

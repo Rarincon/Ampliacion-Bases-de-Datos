@@ -11,7 +11,7 @@
 	<div id="contenedor">
 
 	<?php
-		session_start();
+		//session_start();
 		
 		require("cabecera.php");
 		require("sidebarIzq.php");
@@ -22,8 +22,9 @@
 		<p> Aquí está el contenido público, visible para todos los usuarios. </p>
 	</div>
 	
+	
 	<?php
-		include("sidebarDer.php");
+		//include("sidebarDer.php");
 		include("pie.php");
 	?>
 	
