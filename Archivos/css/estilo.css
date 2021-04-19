@@ -19,19 +19,20 @@ div#cabecera {
 	color: white;
 }
 
-div#cabecera a:hover {
-	color: white;
-	font-weight: bold;
-	text-decoration: underline;
-} 
-
-
 div#indice {
 	padding: 10px;
-	float: center;
+	text-align: left;
 	width: 1330px;
 	height: 30px;
 	background-color: #1687a7;
+}
+
+.r{	
+	text-align: right;
+}
+
+.l{
+	text-align: left;
 }
 
 div#indice a, div#indice a:visited {
@@ -102,3 +103,5 @@ text-decoration: none;
 float:center;
 padding: 10px;
 }
+
+

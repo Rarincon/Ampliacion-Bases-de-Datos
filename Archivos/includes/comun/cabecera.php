@@ -9,12 +9,13 @@
 	<div id="cabecera">
 		<div class="cabecera">
 			<?php
-				echo "<table class='center'>";
+				echo "Tienda de ZAPAS";
+				/*echo "<table class='center'>";
 				echo "<tr>";
 					echo "<td><a href='index.html' style='color:#FFFFFF;'>Inicio</a></td>";
 					echo "<td><a href='marcas.html' style='color:#FFFFFF;'>Marcas</a></td";
 					echo "<td><a href='categorias.html' style='color:#FFFFFF;'>Categorias</a></td>";
-				echo"</tr></table>";
+				echo"</tr></table>";*/
 			?>
 		</div>
 	</div>
