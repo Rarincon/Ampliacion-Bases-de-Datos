@@ -9,8 +9,8 @@
 	
 	<div id="contenedor">
 	<?php
-		require("cabecera.php");
-		require("sidebarIzq.php");
+		require("includes/comun/cabecera.php");
+		require("includes/comun/menu.php");
 	?>
 	
 	<div id="contenido">
@@ -26,8 +26,7 @@
 	</div>
 	
 	<?php
-		include("sidebarDer.php");
-		include("pie.php");
+		include("includes/comun/pie.php");
 	?>
 	</div>
 </body>

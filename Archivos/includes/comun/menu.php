@@ -9,11 +9,11 @@
 	<div id="indice">
 		<ul id="button">			
 				<li><a href="inicio.php">Inicio</a></li>
-				<li><a href="contenido.php">Catalogo</a></li>			
+				<li><a href="listaZapatillas.php">Catalogo</a></li>			
 				<?php
 					if (isset($_SESSION["login"]) && ($_SESSION["login"]==true)) {
 						if(isset($_SESSION["id"]) && $_SESSION["admin"]){
-							echo "<li><a href='admin.php'>Administrar</a></th>";
+							echo "<li><a href='administrar.php'>Administrar</a></th>";
 						}	
 						$id = $_SESSION["id"];
 						echo "<li><a href='vistaPerfil.php?variable=$id'>Perfil</a></th>";
@@ -21,6 +21,7 @@
 					}
 					else {
 						echo "<li><a href='login.php'>Login</a></th>";
+						echo "<li><a href='registro.php'>Registrarse</a></th>";
 					}
 				?>
 		</ul>
