@@ -1,9 +1,8 @@
 <?php 
 
-class TOPelicula {
+class TOZapatillas {
 	
 		private $nombre;
-		private $marca;
 		private $fechaLanzamiento;
 		private $portada;
 	
@@ -15,10 +14,6 @@ class TOPelicula {
 			$this->nombre = $nombreZapatillas;
 		}
 	
-		public function setMarcaZapatillas($marcaZapatillas){
-			$this->marca = $marcaZapatillas;
-		}
-		
 		public function setFechaLanzamientoZapatillas($fechaLanzamientoZapatillas){
 			$this->fechaLanzamiento = $fechaLanzamientoZapatillas;
 		}
@@ -31,12 +26,8 @@ class TOPelicula {
 			return $this->nombre;
 		}
 		
-		public function getMarcaZapatillas(){
-			return $this->estreno;
-		}
-		
 		public function getFechaLanzamientoZapatillas(){
-			return $this->genero;
+			return $this->fechaLanzamiento;
 		}
 	
 		public function getPortadaZapatillas(){

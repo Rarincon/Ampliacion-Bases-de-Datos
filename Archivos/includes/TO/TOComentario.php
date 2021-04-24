@@ -6,7 +6,7 @@ class TOComentario{
 		private $nombre;
 		private $fecha;
 		private $comentario;
-		private $idZapatillas
+		private $idZapatillas;
 
 		public function __construct(){}
 		

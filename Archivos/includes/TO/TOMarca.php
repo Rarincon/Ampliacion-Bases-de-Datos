@@ -27,7 +27,7 @@ class TOMarca {
 		}
 		
 		public function getMarca(){
-			return $this->estreno;
+			return $this->marca;
 		}
 		
 		public function getTipo(){

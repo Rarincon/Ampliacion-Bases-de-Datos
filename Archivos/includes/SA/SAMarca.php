@@ -12,13 +12,13 @@ class SAMarca {
 		return $daoMarca->buscaMarcaDAO($nombreMarca);
 	}
 		
-	public static function anadirMarcaSA($marca,$nombre, $tipo){
+	public static function anadirMarcaSA($nombre,$marca, $tipo){
 		$daoMarca = new DAOMarca();
 		$existeMarca = $daoMarca->buscaMarcaDAO($nombre);
 		if ($existeMarca) {
 			return NULL; 
 		}
-		$daoMarca->anadirMarcaDAO($marca,$nombre, $tipo);
+		$daoMarca->anadirMarcaDAO($nombre, $marca, $tipo);
 		return $existeMarca;
 	}
 		

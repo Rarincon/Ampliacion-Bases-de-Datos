@@ -8,17 +8,17 @@ class SAZapatillas {
 	private static $daoZapatillas;
 	
 	public static function buscaZapatillasSA($nombreZapatilla) {
-		$daoZapatilla = new DAOZapatilla();
-		return $daoZapatilla->buscaZapatillaDAO($nombreZapatilla);
+		$daoZapatilla = new DAOZapatillas();
+		return $daoZapatilla->buscaZapatillasDAO($nombreZapatilla);
 	}
 		
-	public static function anadirZapatillasSA($nombre,$marca, $fechaLanzamiento, $portada){
+	public static function anadirZapatillasSA($nombre ,$fechaLanzamiento, $portada){
 		$daoZapatillas = new DAOZapatillas();
 		$existeZapatillas = $daoZapatillas->buscaZapatillasDAO($nombre);
 		if ($existeZapatillas) {
 			return NULL; 
 		}
-		$daoPZapatillas->anadirZapatillasDAO($nombre,$marca, $fechaLanzamiento, $portada);
+		$daoZapatillas->anadirZapatillasDAO($nombre, $fechaLanzamiento, $portada);
 		return $existeZapatillas;
 	}
 		

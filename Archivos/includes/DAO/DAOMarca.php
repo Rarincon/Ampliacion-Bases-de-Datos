@@ -25,7 +25,7 @@ class DAOMarca extends DAO {
 		return null;
 	}
 	
-	public function anadirMarcaDAO($marca, $nombre, $tipo){
+	public function anadirMarcaDAO($nombre,$marca, $tipo){
         $sql = "INSERT INTO marcas (Nombre, Marca, Tipo)
 		VALUES ('$nombre', '$marca', '$tipo')";
         $this->ejecutarModificacion($sql);

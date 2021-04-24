@@ -26,7 +26,6 @@
 			?>
 		</div>
 		<?php
-			include("includes/comun/sidebarDer.php");
 			include("includes/comun/pie.php");
 		?>
 	</div> <!-- Fin del contenedor -->

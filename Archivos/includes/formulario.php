@@ -31,7 +31,7 @@ abstract class Formulario {
     }
 	
 	public function gestionaFormularioComentario($idZapatillas){  
-		formularioAñadirComentario::procesaFormulario($idPelicula, $idSerie);	
+		formularioAñadirComentario::procesaFormulario($idZapatillas);	
     }
 	
 	public function generaFormulario(){
@@ -44,7 +44,7 @@ abstract class Formulario {
 			$html .= FormularioAñadirZapatillas::generaCamposFormulario();	
 		}
 		else if($this->opciones == "borrarZapatillas"){
-			$html .= FormularioBorrarZapatillasZapatillas::generaCamposFormulario();	
+			$html .= FormularioBorrarZapatillas::generaCamposFormulario();	
 		}
 		else if($this->opciones == "registro"){
 			$html .= FormularioRegistro::generaCamposFormulario();	

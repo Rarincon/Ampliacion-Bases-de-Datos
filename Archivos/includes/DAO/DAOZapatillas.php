@@ -17,18 +17,17 @@ class DAOZapatillas extends DAO {
 		if ($rs) {
 			if (count($rs) == 1) {
 				$zapatillas->setNombreZapatillas($rs[0]["Nombre"]);
-				$zapatillas->setMarcaZapatillas($rs[0]["Marca"]);
 				$zapatillas->setFechaLanzamientoZapatillas($rs[0]["FechaLanzamiento"]);
-				$zapatillas->setPortadaPelicula($rs[0]["Portada"]);
+				$zapatillas->setPortadaZapatillas($rs[0]["Portada"]);
             return $zapatillas;
 			}
 		}
 		return null;
 	}
 	
-	public function anadirZapatillasDAO($nombre, $marca, $fechaLanzamiento, $portada){
-        $sql = "INSERT INTO zapatillas (Nombre, Marca, FechaLanzamiento, Portada)
-		VALUES ('$nombre', '$marca', '$fechaLanzamiento', '$portada')";
+	public function anadirZapatillasDAO($nombre, $fechaLanzamiento, $portada){
+        $sql = "INSERT INTO zapatillas (Nombre, FechaLanzamiento, Portada)
+		VALUES ('$nombre', '$fechaLanzamiento', '$portada')";
         $this->ejecutarModificacion($sql);
  	}
 	

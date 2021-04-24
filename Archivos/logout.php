@@ -17,17 +17,21 @@
 	
 	<div id="contenedor">
 		<?php
-			require("cabecera.php");
-			require("sidebarIzq.php");
+			require("includes/comun/cabecera.php");
+			require("includes/comun/menu.php");
 		?>
 		<div id="contenido">
-			<h1>Salir</h1>
-			<p>Sesion cerrada.</p>
+			<?php
+				session_destroy();
+				unset($_SESSION["id"]);
+				$_SESSION["login"] = false;
+				$_SESSION["admin"] = false;
+				echo "<h2> Ha cerrado la sesion, vuelva pronto</h2>";
+			?>
 
 		</div>
 			<?php
-				include("sidebarDer.php");
-				include("pie.php");
+				include("includes/comun/pie.php");
 			?>
 	</div>
 </body>

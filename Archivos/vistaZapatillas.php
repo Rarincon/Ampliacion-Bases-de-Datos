@@ -1,5 +1,6 @@
 <?php
 	require_once __DIR__.'/includes/SA/SAZapatillas.php';
+	require_once __DIR__.'/includes/SA/SAMarca.php';
 	require_once __DIR__.'/includes/TO/TOZapatillas.php';
 	require_once __DIR__.'/includes/SA/SAComentario.php';
 	require_once __DIR__.'/includes/TO/TOComentario.php';
@@ -20,12 +21,14 @@
 		<div id="contenido">
 			<?php
 					if(isset($_GET['variable'])){
-						$pelicula = SAZapatillas::buscaZapatillasSA($_GET['variable']);
+						$zapas = SAZapatillas::buscaZapatillasSA($_GET['variable']);
+						$marca = SAMarca::buscaMarcaSA($_GET['variable']);
 					}				
-					echo"<img src = " . $pelicula->getPortadaZapatillas() . " width='180' height='120'></br>";
-					echo "Zapatillas:			". $pelicula->getNombreZapatillas() . "</br>";
-					echo "Marca:	" . $pelicula->getMarcaZapatillas() ."</br>";
-					echo "Fecha de lanzamiento:			" . $pelicula->getFechaLanzamientoZapatillas() . "</br>";
+					echo"<img src = " . $zapas->getPortadaZapatillas() . " width='180' height='120'></br>";
+					echo "Zapatillas:			". $zapas->getNombreZapatillas() . "</br>";
+					echo "Marca:	" . $marca->getMarca() ."</br>";
+					echo "Tipo:	" . $marca->getTipo() ."</br>";
+					echo "Fecha de lanzamiento:			" . $zapas->getFechaLanzamientoZapatillas() . "</br>";
 					
 					echo "Comentarios</br>";
 					$listaComents = SAComentario::listarComentariosSA($_GET['variable']);
@@ -45,13 +48,12 @@
 					if(isset($_SESSION['id']) && isset($_SESSION['login'])){
 						$opciones = "";
 					$formulario = new FormularioAñadirComentario($opciones);
-					echo "" . $formulario->generaFormularioComentario($pelicula->getNombreZapatillas(), NULL) . "";
-					$formulario->formularioEnviadoComentario($pelicula->getNombreZapatillas(), NULL);
+					echo "" . $formulario->generaFormularioComentario($zapas->getNombreZapatillas(), NULL) . "";
+					$formulario->formularioEnviadoComentario($zapas->getNombreZapatillas(), NULL);
 					}				
 			?>
 		</div>
 		<?php
-			include("includes/comun/sidebarDer.php");
 			include("includes/comun/pie.php");
 		?>
 	</div> <!-- Fin del contenedor -->

@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__.'/formulario.php';
+require_once __DIR__.'/SA/SAMarca.php';
 
 
 class FormularioAñadirZapatillas extends Formulario{
@@ -9,8 +10,9 @@ class FormularioAñadirZapatillas extends Formulario{
        return '	<fieldset>
 					<legend> Datos de las zapatillas </legend>
 					Nombre:			<br><input type="text" name="nombre"></br>
-					Marca:	<br><input type="date" name="marca"></br>
-					Fecha Lanzamiento:			<br><input type="text" name="fechaLanzamiento"></br>
+					Fecha Lanzamiento:<br><input type="date" name="fechaLanzamiento"></br>
+					Marca:	<br><input type="text" name="marca"></br>
+					Tipo:	<br><input type="text" name="tipo"></br>
 					Portada:		<br><input type="file" name="imagen"/></br>	
 					<br><input type="submit" name="enviar" value="Enviar"></br>
 				</fieldset>';
@@ -35,9 +37,14 @@ class FormularioAñadirZapatillas extends Formulario{
 		if(empty($fechaLanzamiento)){
 			$errores[] = "La fecha de lanzamiento de las zapatillas no puede estar vacío";
 		}
+		$tipo = $_POST['tipo'];
+		if(empty($tipo)){
+			$errores[] = "El tipo de las zapatillas no puede estar vacío";
+		} 
 	
 		if(count($errores) == 0){
-			SAZapatillas::anadirZapatillasSA($nombre,$maca, $fechaLanzamiento, $portadaFileType);
+			SAMarca::anadirMarcaSA($nombre,$marca, $tipo);
+			SAZapatillas::anadirZapatillasSA($nombre, $fechaLanzamiento, $portadaFileType);			
 			move_uploaded_file($tempname, $portadaFileType);
 		}
 		else{
