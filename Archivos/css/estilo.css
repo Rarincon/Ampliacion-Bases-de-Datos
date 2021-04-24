@@ -70,7 +70,7 @@ div.saludo {
 
 fieldset {
 	border: 1px solid black;
-	width: 15em;
+	width: 20em;
 	margin: 0 auto;
 }
 
@@ -82,8 +82,8 @@ legend {
 } 
 
 label {
-	width: 4em;
-	text-align: right;
+	width: 15em;
+	text-align: left;
 	margin-right: 0.5em;
 	display: inline-block;
 }

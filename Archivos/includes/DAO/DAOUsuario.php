@@ -34,9 +34,9 @@ class DAOUsuario extends DAO {
 		return null;
 	}
 	
-	public function anadirUsuarioDAO($id, $nombre, $contrasena, $fecha, $correo, $tipo){
-        $sql = "INSERT INTO usuarios (Id, Nombre, Contrasenia, Fecha, Coreo, Tipo)
-		VALUES ('$id', '$nombre', '$contrasena', '$fecha', '$correo', '$tipo')";
+	public function anadirUsuarioDAO($id, $nombre, $fecha, $correo, $contrasena, $tipo){
+        $sql = "INSERT INTO usuarios (Id, Nombre, FechaNacimiento, Correo, Contrasenia, Tipo)
+		VALUES ('$id', '$nombre', '$fecha', '$correo', '$contrasena','$tipo')";
         $this->ejecutarModificacion($sql);
  	}
 	

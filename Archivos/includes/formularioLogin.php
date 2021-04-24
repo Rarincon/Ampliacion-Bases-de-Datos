@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__.'/formulario.php';
+require_once __DIR__.'/SA/SAUsuario.php';
 
 
 class FormularioLogin extends Formulario{
@@ -9,10 +10,8 @@ class FormularioLogin extends Formulario{
 		return '<fieldset>
 					<legend> Datos del usuario </legend>
 					<form method="post" action="procesarLogin.php">
-					<label> Nombre: </label>
-					<input type="text" name="nombre">
-					<label> Contraseña: </label>
-					<input type="password" name="contrasena">
+					 Nombre: <br> <input type="text" name="nombre"> </br>
+					 Contraseña: <br> <input type="password" name="contrasena"> </br>
 					<input type="submit" name="enviar" value="Enviar">
 				</fieldset>';
 			

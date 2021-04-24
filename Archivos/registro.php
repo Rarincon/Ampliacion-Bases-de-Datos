@@ -13,10 +13,11 @@
 				require("includes/comun/menu.php");
 			?>
 			<div id="contenido">
-				<?php 
-				$opciones = array();
-				$formulario = new FormularioRegistro("formRegistro", $opciones);
-				$formulario->gestiona();
+				<?php 				
+				$opciones = "registro";
+				$formulario = new FormularioRegistro($opciones);
+				echo "" . $formulario->generaFormulario() . "";
+				$formulario->formularioEnviado();
 			?>
 			</div>
 			<?php

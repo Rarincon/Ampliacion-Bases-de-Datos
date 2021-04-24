@@ -10,7 +10,7 @@ class SAUsuario{
         $daoUsuario = new DAOUsuario();
         $user = $daoUsuario->buscaUsuarioDAO($idUsuario);
         if ($user && $user->compruebaPassword($password)) {
-            return $user;
+			return $user;		
         }
         return NULL;
     }
@@ -21,14 +21,13 @@ class SAUsuario{
     }
     
     
-    public static function crea($idUsuario, $nombre, $contrasena, $fecha, $correo, $tipo){
+    public static function crea($idUsuario, $nombre, $fecha, $correo, $contrasena, $tipo){
         $daoUsuario = new DAOUsuario();
         $user = $daoUsuario->buscaUsuarioDAO($idUsuario);
         if ($user) {
             return NULL;
         }
-        $user = new TOUsuario($idUsuario, $nombre, hashPassword($contrasena), $fecha, $correo, $tipo);
-        $daoUsuario->inserta($user);
+        $daoUsuario->anadirUsuarioDAO($idUsuario, $nombre, $fecha, $correo,  $contrasena, $tipo);
         return $user;
     }
 

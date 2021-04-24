@@ -17,13 +17,16 @@ abstract class Formulario {
   
     public function gestiona() {  
 		if($this->opciones == "login"){
-			formularioLogin::procesaFormulario();	
+			FormularioLogin::procesaFormulario();	
 		}
 		else if($this->opciones == "anadirZapatillas"){
-			formularioAñadirPelicula::procesaFormulario();	
+			FormularioAñadirZapatillas::procesaFormulario();	
 		}
 		else if($this->opciones == "borrarZapatillas"){
-			formularioBorrarPelicula::procesaFormulario();		
+			FormularioBorrarZapatillas::procesaFormulario();		
+		}
+		else if($this->opciones == "registro"){
+			FormularioRegistro::procesaFormulario();	
 		}
     }
 	
@@ -35,13 +38,16 @@ abstract class Formulario {
 		$html ='';
 		$html .= '<form method="POST" enctype="multipart/form-data">';
 		if($this->opciones == "login"){
-			$html .= formularioLogin::generaCamposFormulario();	
+			$html .= FormularioLogin::generaCamposFormulario();	
 		}
 		else if($this->opciones == "anadirZapatillas"){
-			$html .= formularioAñadirPelicula::generaCamposFormulario();	
+			$html .= FormularioAñadirZapatillas::generaCamposFormulario();	
 		}
 		else if($this->opciones == "borrarZapatillas"){
-			$html .= formularioBorrarPelicula::generaCamposFormulario();	
+			$html .= FormularioBorrarZapatillasZapatillas::generaCamposFormulario();	
+		}
+		else if($this->opciones == "registro"){
+			$html .= FormularioRegistro::generaCamposFormulario();	
 		}
 		$html .= '</form>';
 		return $html;
@@ -63,6 +69,9 @@ abstract class Formulario {
 			$this->gestiona();
 		}
 		else if(isset($_POST['nombre']) && $this->opciones == "borrarZapatillas"){
+			$this->gestiona();
+		}
+		else if(isset($_POST['nombre']) && $this->opciones == "registro"){
 			$this->gestiona();
 		}
 		else{

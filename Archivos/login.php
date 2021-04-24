@@ -1,3 +1,6 @@
+<?php
+	require_once __DIR__.'/includes/FormularioLogin.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,17 +17,14 @@
 	?>
 	
 	<div id="contenido">
-		<h1>Acceso al sistema</h1>
-		<form action="procesarLogin.php" method="POST">
-			<fieldset>
-				<legend>Usuario y contraseña</legend>
-				<p><label>Name:</label> <input type="text" name="username" /></p>
-				<p><label>Password:</label> <input type="password" name="password" /></p>
-				<button type="submit">Entrar</button>
-			</fieldset>
-		</form>
-	</div>
-	
+		<?php 
+			$opciones = "login";
+			$formulario = new FormularioLogin( $opciones);
+			echo "" . $formulario->generaFormulario() . "";
+			$formulario->formularioEnviado();
+		?>
+
+	</div>	
 	<?php
 		include("includes/comun/pie.php");
 	?>
