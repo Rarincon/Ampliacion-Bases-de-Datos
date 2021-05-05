@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-04-2021 a las 20:09:39
+-- Tiempo de generación: 05-05-2021 a las 19:59:20
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.2
 
@@ -32,8 +32,15 @@ CREATE TABLE `comentarios` (
   `Fecha` date NOT NULL,
   `Comentario` varchar(500) NOT NULL,
   `IdZapatillas` varchar(200) NOT NULL,
-  `IdComentario` varchar(100) NOT NULL
+  `IdComentario` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `comentarios`
+--
+
+INSERT INTO `comentarios` (`IdUsuario`, `Fecha`, `Comentario`, `IdZapatillas`, `IdComentario`) VALUES
+('admin', '0000-00-00', 'me encanto', 'Jordan', 1);
 
 -- --------------------------------------------------------
 
@@ -75,7 +82,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`Id`, `Nombre`, `Contrasenia`, `FechaNacimiento`, `Correo`, `Tipo`) VALUES
 ('admin', 'admin', '$2y$10$mY1128X6HXrMSWbZ/Zv2p.SQY.CD6/7qfsGL3V8nfZTq5JpSgsYRq', '1999-02-09', 'admin', 'admin'),
-('juan', 'juan', '$2y$10$WKFUnvrM2kfPf26LTHL8tOJCdK2hb2I1nnabSobfVOGNQyOyBWTAG', '2021-04-02', 'eppepepe', 'user');
+('juan', 'juan', '$2y$10$WKFUnvrM2kfPf26LTHL8tOJCdK2hb2I1nnabSobfVOGNQyOyBWTAG', '2021-04-02', 'eppepepe', 'user'),
+('m', 'm', '$2y$10$uII18z2PeQU6olQvsBgJueM22T4RQf302Rq6hB.NfJl0.DZbAWumi', '2021-05-07', 'eppepepe', 'user');
 
 -- --------------------------------------------------------
 
@@ -105,8 +113,8 @@ INSERT INTO `zapatillas` (`Nombre`, `FechaLanzamiento`, `Portada`) VALUES
 --
 ALTER TABLE `comentarios`
   ADD PRIMARY KEY (`IdComentario`),
-  ADD KEY `FOREIGN KEY` (`IdZapatillas`),
-  ADD KEY `IdUsuario` (`IdUsuario`);
+  ADD KEY `IdZapatillas` (`IdZapatillas`),
+  ADD KEY `Foreign key` (`IdUsuario`) USING BTREE;
 
 --
 -- Indices de la tabla `marcas`
@@ -125,6 +133,16 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `zapatillas`
   ADD PRIMARY KEY (`Nombre`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `IdComentario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
