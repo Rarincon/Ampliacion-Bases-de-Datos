@@ -46,10 +46,10 @@
 						}
 					}
 					if(isset($_SESSION['id']) && isset($_SESSION['login'])){
-						$opciones = "";
-					$formulario = new FormularioAñadirComentario($opciones);
-					echo "" . $formulario->generaFormularioComentario($zapas->getNombreZapatillas(), NULL) . "";
-					$formulario->formularioEnviadoComentario($zapas->getNombreZapatillas(), NULL);
+						$opciones = array();
+						$formulario = new FormularioAñadirComentario("formAnadirComentario",$opciones);
+						echo "" . $formulario->generaFormularioComentario($zapas->getNombreZapatillas()) . "";
+						$formulario->formularioEnviadoComentario($zapas->getNombreZapatillas());
 					}				
 			?>
 		</div>

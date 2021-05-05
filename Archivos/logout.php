@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="estilo.css" />
+	<link rel="stylesheet" type="text/css" href="estilo-basico.css" />
 	<meta charset="utf-8">
 	<title>logout</title>
 </head>
 <body>
 	<?php
-		session_start();
+		/*session_start();
 		unset($_SESSION['login']);
 		unset($_SESSION['nombre']);
 		unset($_SESSION['contraseña']);
 		unset($_SESSION['esAdmin']);
-		session_destroy();	
+		session_destroy();*/	
 	?>
 	
 	<div id="contenedor">
@@ -27,6 +27,8 @@
 				$_SESSION["login"] = false;
 				$_SESSION["admin"] = false;
 				echo "<h2> Ha cerrado la sesion, vuelva pronto</h2>";
+				header('Location: inicio.php');
+                exit();
 			?>
 
 		</div>

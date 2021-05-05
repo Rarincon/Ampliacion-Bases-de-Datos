@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="estilo.css" />
+	<link rel="stylesheet" type="text/css" href="estilo-basico.css" />
 	<meta charset="utf-8">
 	<title>Cabecera</title>
 </head>

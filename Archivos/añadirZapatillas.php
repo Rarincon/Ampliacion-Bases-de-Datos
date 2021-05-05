@@ -18,8 +18,8 @@
 			?>
 			<div id="contenido">
 			<?php
-				$opciones = "anadirZapatillas";
-				$formulario = new FormularioAñadirZapatillas($opciones);
+				$opciones = array();
+				$formulario = new FormularioAñadirZapatillas("anadirZapatillas",$opciones);
 				echo "" . $formulario->generaFormulario() . "";
 				$formulario->formularioEnviado();
 			?>

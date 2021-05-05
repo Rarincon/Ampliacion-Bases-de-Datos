@@ -1,0 +1,39 @@
+th  {
+	padding: 10px;
+	width: auto;
+	height: 20px;
+	text-align: center;
+}
+
+table {
+	width: 100%;
+	background-size: cover;
+	border-collapse: collapse;
+}
+
+tbody {
+	width: 100%;
+	background-size: cover;
+	border-collapse: collapse;
+}
+
+
+div#menu {
+	padding: 10px;
+	float: center;
+	width: auto;
+	height: 30px;
+	background-color: #1687a7;
+	background-size: cover;
+}
+
+div#menu a, div#menu a:visited {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div#menu a:hover {
+	color: white;
+	text-decoration: underline;
+} 

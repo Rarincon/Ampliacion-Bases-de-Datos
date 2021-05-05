@@ -21,10 +21,11 @@ div#cabecera {
 
 div#indice {
 	padding: 10px;
-	text-align: left;
-	width: 1330px;
+	text-align: center;
+	width: auto;
 	height: 30px;
 	background-color: #1687a7;
+	background-size: cover;
 }
 
 .r{	
@@ -33,6 +34,10 @@ div#indice {
 
 .l{
 	text-align: left;
+}
+
+c{
+	text-align: center;
 }
 
 div#indice a, div#indice a:visited {
@@ -48,10 +53,14 @@ div#indice a:hover {
 
 div#contenido {
 	padding: 10px;
-	float: left;
+	float: center;
 	height: 470px;
 	width: 1330px;
 	background-color: #d3e0ea;
+}
+
+div#pos{
+	text-align: justify;
 }
 
 div#pie {
@@ -94,6 +103,7 @@ padding: 100;
 
 #button li {
 display: inline;
+text-align: center
 }
 
 #button li a {

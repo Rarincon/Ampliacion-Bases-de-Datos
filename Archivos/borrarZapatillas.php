@@ -17,8 +17,8 @@
 			?>
 			<div id="contenido">
 			<?php
-				$opciones = "borrarZapatillas";
-				$formulario = new FormularioBorrarZapatillas($opciones);
+				$opciones = array();
+				$formulario = new FormularioBorrarZapatillas("borrarZapatillas",$opciones);
 				echo "" . $formulario->generaFormulario() . "";
 				$formulario->formularioEnviado();
 			?>

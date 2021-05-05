@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	<link rel="stylesheet" type="text/css" href="css/estiloComun.css" />
 	<meta charset="utf-8">
 	<title>Menu</title>
 </head>
 <body>
-	<div id="indice">
-		<ul id="button">			
-				<li><a href="inicio.php">Inicio</a></li>
-				<li><a href="listaZapatillas.php">Catalogo</a></li>			
+	<div id="menu">
+		<table>
+			<tr>
+				<th><a href="inicio.php">Inicio</a></th>
+				<th><a href="listaZapatillas.php">Catalogo</a></th>		
 				<?php
 					if (isset($_SESSION["login"]) && ($_SESSION["login"]==true)) {
 						if(isset($_SESSION["id"]) && $_SESSION["admin"]){
-							echo "<li><a href='administrar.php'>Administrar</a></th>";
+							echo "<th><a href='administrar.php'>Administrar</a></th>";
 						}	
 						$id = $_SESSION["id"];
-						echo "<li><a href='vistaPerfil.php?variable=$id'>Perfil</a></th>";
-						echo "<li><a href='logout.php'>Salir</a></th>";
+						echo "<th><a href='vistaPerfil.php?variable=$id'>Perfil</a></th>";
+						echo "<th><a href='logout.php'>Salir</a></th>";
 					}
 					else {
-						echo "<li><a href='login.php'>Login</a></th>";
-						echo "<li><a href='registro.php'>Registrarse</a></th>";
+						echo "<th><a href='login.php'>Login</a></th>";
+						echo "<th><a href='registro.php'>Registrarse</a></th>";
 					}
 				?>
-		</ul>
+			</tr>
+		</table>
 	</div>
 </body>
 </html>

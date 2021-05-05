@@ -3,6 +3,7 @@
 ?>
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="css/estilo-basico.css" />
 		<meta charset="utf-8">
 		<title> Registro </title>
 	</head>
@@ -14,8 +15,8 @@
 			?>
 			<div id="contenido">
 				<?php 				
-				$opciones = "registro";
-				$formulario = new FormularioRegistro($opciones);
+				$opciones = array();
+				$formulario = new FormularioRegistro("registro",$opciones);
 				echo "" . $formulario->generaFormulario() . "";
 				$formulario->formularioEnviado();
 			?>

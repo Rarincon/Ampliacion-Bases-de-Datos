@@ -13,7 +13,7 @@ class FormularioAñadirComentario extends Formulario{
 				</fieldset>';
  	} 
 
- 	public function procesaFormulario($idZapatillas){ 
+ 	public function procesaFormularioComentario($idZapatillas){ 
         $errores = array();	
 		$comentario = $_POST['comentario'];
 		if(empty($comentario)){

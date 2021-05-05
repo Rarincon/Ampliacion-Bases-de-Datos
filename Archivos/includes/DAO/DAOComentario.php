@@ -27,9 +27,27 @@ class DAOComentario extends DAO {
 		return null;
 	}
 	
+	public function buscaComentarioPersDAO($Idnombre) {
+		$coment = new TOComentario();
+		$query = "SELECT * FROM comentarios WHERE IdUsuario = '$Idnombre'";
+		$rs = $this->ejecutarConsulta($query);
+		if ($rs) {
+			if (count($rs) == 1) {				
+				return true;
+			}else return false;
+		}
+		return false;
+	}
+	
 	public function anadirComentarioDAO($nombre,$fecha, $comentario, $zapatillas){
 		$sql = "INSERT INTO comentarios (IdUsuario, Fecha, Comentario, IdZapatillas)
 		VALUES ('$nombre', '$fecha', '$comentario', '$zapatillas')";
+		
+        $this->ejecutarModificacion($sql);
+ 	}
+	
+	public function actualizaComentarioDAO($nombre,$fecha, $comentario, $zapatillas){
+		$sql = "UPDATE comentarios SET Comentario = '$comentario' WHERE IdUsuario = '$nombre' AND IdZapatillas = '$zapatillas'";
 		
         $this->ejecutarModificacion($sql);
  	}
