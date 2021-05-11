@@ -19,6 +19,7 @@
 			require("includes/comun/menu.php");
 		?>
 		<div id="contenido">
+		<div id="scrol">
 			<?php
 					if(isset($_GET['variable'])){
 						$zapas = SAZapatillas::buscaZapatillasSA($_GET['variable']);
@@ -52,6 +53,7 @@
 						$formulario->formularioEnviadoComentario($zapas->getNombreZapatillas());
 					}				
 			?>
+		</div>
 		</div>
 		<?php
 			include("includes/comun/pie.php");

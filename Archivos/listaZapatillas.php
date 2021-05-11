@@ -15,6 +15,7 @@
 			require("includes/comun/menu.php");
 		?>
 		<div id="contenido">
+		<div id="scrol">
 			<?php
 				$listaZapatillas = SAZapatillas::listarZapatillasSA();
 				$numero = sizeof($listaZapatillas);
@@ -30,6 +31,7 @@
 					}
 				}
 			?>
+		</div>
 		</div>
 		<?php
 			include("includes/comun/pie.php");
