@@ -16,9 +16,9 @@ class SAComentario {
 	public static function anadirComentarioSA($nombre,$fecha, $comentario, $zapas){
 		
 		$daoComentario = new DAOComentario();
-		if($daoComentario->buscaComentarioPersDAO($nombre))
+		/*if($daoComentario->buscaComentarioPersDAO($nombre))
 			$daoComentario->actualizaComentarioDAO($nombre,$fecha, $comentario, $zapas);
-		else
+		else*/
 			$daoComentario->anadirComentarioDAO($nombre,$fecha, $comentario, $zapas);
 		return true;
 	}
