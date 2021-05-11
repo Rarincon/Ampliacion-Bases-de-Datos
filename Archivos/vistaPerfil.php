@@ -17,8 +17,7 @@
 			require("includes/comun/cabecera.php");
 			require("includes/comun/menu.php");
 		?>
-		<div id="contenido">
-		<div id="scrol">
+		<div id="contenidos">
 			<?php
 				if (isset($_GET['variable'])){
 					$perfilUsuario = SAUsuario::buscaUsuarioSA($_GET['variable']);
@@ -42,7 +41,6 @@
 					echo "</p>";
 				}
 			?>
-		</div>
 		</div>
 		<?php
 			include("includes/comun/pie.php");

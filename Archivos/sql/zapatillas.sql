@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-05-2021 a las 19:59:20
+-- Tiempo de generación: 11-05-2021 a las 18:12:38
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.2
 
@@ -40,7 +40,22 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`IdUsuario`, `Fecha`, `Comentario`, `IdZapatillas`, `IdComentario`) VALUES
-('admin', '0000-00-00', 'me encanto', 'Jordan', 1);
+('admin', '0000-00-00', 'me encanto', 'Jordan', 1),
+('juan', '0000-00-00', 'manolo el del bombo', 'Jordan', 2),
+('juan', '0000-00-00', 'jose', 'Jordan', 3),
+('juan', '0000-00-00', 'pepe', 'Jordan', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `favoritos`
+--
+
+CREATE TABLE `favoritos` (
+  `IdUsuario` varchar(100) NOT NULL,
+  `IdZapatilla` varchar(200) NOT NULL,
+  `IdFav` int(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -117,6 +132,14 @@ ALTER TABLE `comentarios`
   ADD KEY `Foreign key` (`IdUsuario`) USING BTREE;
 
 --
+-- Indices de la tabla `favoritos`
+--
+ALTER TABLE `favoritos`
+  ADD PRIMARY KEY (`IdFav`),
+  ADD KEY `Foreign key` (`IdUsuario`),
+  ADD KEY `Foreign zapatilla` (`IdZapatilla`);
+
+--
 -- Indices de la tabla `marcas`
 --
 ALTER TABLE `marcas`
@@ -142,7 +165,13 @@ ALTER TABLE `zapatillas`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `IdComentario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdComentario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `favoritos`
+--
+ALTER TABLE `favoritos`
+  MODIFY `IdFav` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
@@ -154,6 +183,13 @@ ALTER TABLE `comentarios`
 ALTER TABLE `comentarios`
   ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`IdZapatillas`) REFERENCES `zapatillas` (`Nombre`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `favoritos`
+--
+ALTER TABLE `favoritos`
+  ADD CONSTRAINT `favoritos_ibfk_1` FOREIGN KEY (`Idzapatilla`) REFERENCES `marcas` (`Nombre`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `favoritos_ibfk_2` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `zapatillas`
