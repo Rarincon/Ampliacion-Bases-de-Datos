@@ -6,6 +6,7 @@
 ?>
 <html lang="es">
 	<head>
+		<link rel="stylesheet" type="text/css" href="css/estilo-basico.css" />
 		<meta charset="utf-8">
 		<title> Borrar zapatillas </title>
 	</head>
