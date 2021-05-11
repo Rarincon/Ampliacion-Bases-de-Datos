@@ -4,7 +4,11 @@
 	require_once __DIR__.'/includes/TO/TOZapatillas.php';
 	require_once __DIR__.'/includes/SA/SAComentario.php';
 	require_once __DIR__.'/includes/TO/TOComentario.php';
+	require_once __DIR__.'/includes/SA/SAFavorito.php';
+	require_once __DIR__.'/includes/TO/TOFavorito.php';
 	require_once __DIR__.'/includes/FormularioAñadirComentario.php';
+	require_once __DIR__.'/includes/FormularioAnadirFavorito.php';
+	require_once __DIR__.'/includes/FormularioEliminarFavorito.php';
 ?>
 <html>
 <head>
@@ -30,6 +34,22 @@
 					echo "Marca:	" . $marca->getMarca() ."</br>";
 					echo "Tipo:	" . $marca->getTipo() ."</br>";
 					echo "Fecha de lanzamiento:			" . $zapas->getFechaLanzamientoZapatillas() . "</br>";
+					
+					if(isset($_SESSION["login"]) && $_SESSION["login"] == true){
+					$apuntado = SAFavorito::buscaFavoritoSA($_SESSION["id"],$_GET['variable']);
+					if(!$apuntado){					
+						$opciones = array();
+						$formulario = new FormularioAnadirFavorito("formAñadirFavorito", $opciones);
+						echo "" . $formulario->generaFormularioFavorito($apuntado) . "";
+						$formulario->formularioEnviadoFavorito($zapas->getNombreZapatillas(), $apuntado);
+					}
+					else {					
+						$opciones = array();
+						$formulario = new FormularioEliminarFavorito("formEliminarFavorito", $opciones);
+						echo "" . $formulario->generaFormularioFavorito($apuntado) . "";
+						$formulario->formularioEnviadoFavorito($zapas->getNombreZapatillas(), $apuntado);
+					}
+				}			
 					
 					echo "Comentarios</br>";
 					$listaComents = SAComentario::listarComentariosSA($_GET['variable']);

@@ -23,36 +23,6 @@ abstract class Formulario {
             $this->action = htmlentities($_SERVER['PHP_SELF']);
         }
     }
-	
-	 public function gestiona2()
-    {   
-        if ( ! $this->formularioEnviado($_POST) ) {
-            echo $this->generaFormulario();
-        } else {
-            
-            $result = $this->procesaFormulario($_POST);
-            if ( is_array($result) ) {
-                echo $this->generaFormulario($result, $_POST);
-            } else {
-                header('Location: index.php');
-                exit();
-            }
-        }  
-    }
-	
-	public function generaFormulario2($errores = array(), &$datos = array())
-    {
-       
-        $html= $this->generaListaErrores($errores);
-
-        $html .= '<form method="POST" action="'.$this->action.'" id="'.$this->formId.'" enctype="multipart/form-data">';
-        $html .= '<input type="hidden" name="action" value="'.$this->formId.'" />';
-        
-        $html .= $this->generaCamposFormulario($datos);
-        $html .= '</form>';
-       
-        return $html;
-    }
   
     public function gestiona() {  
 		if($this->formId == "login"){
@@ -135,6 +105,38 @@ abstract class Formulario {
 		else{
 			$this->generaFormularioComentario($idZapatillas);
 		}
+	}
+	
+	public function gestionaFormularioFavorito($idZapas, $apuntado){  
+		if(!$apuntado){
+			formularioAnadirFavorito::procesaFormulario($idZapas);
+		}
+		else{
+			formularioEliminarFavorito::procesaFormulario($idZapas);
+		}
+		header('Location: vistaZapatillas.php?variable=' .$idZapas);
+        exit();
+    }
+	
+	public function formularioEnviadoFavorito($idZapas, $apuntado){
+		$c = $_POST['condi'] ?? "";
+		if($c == 'ok'){
+			$this->gestionaFormularioFavorito($idZapas, $apuntado);
+		}else{
+			$this->generaFormularioFavorito($idZapas, $apuntado);
+		}
+	}
+	
+	public function generaFormularioFavorito($apuntado){
+		$datosIniciales = array();
+		$html ='';
+		$html .= '<form method="POST" enctype="multipart/form-data">';
+		if($apuntado==false){
+			$html .= formularioAnadirFavorito::generaCamposFormulario($datosIniciales);
+		}else {
+			$html .= formularioEliminarFavorito::generaCamposFormulario($datosIniciales);
+		}$html .= '</form>';
+		return $html;		
 	}
 }
 ?>
