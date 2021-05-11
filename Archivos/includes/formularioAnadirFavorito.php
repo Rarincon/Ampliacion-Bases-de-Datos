@@ -10,7 +10,7 @@ class FormularioAnadirFavorito extends Formulario{
        return '	<fieldset>
 					Añadir a Favoritos<br>
 					<input type="checkbox" name="condi" value="ok">Si<br>
-					<input type="submit" name="enviar" value="Enviar">
+					<input type="submit" name="enviar" value="Añadir">
 				</fieldset>';
  	} 
 

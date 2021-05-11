@@ -10,7 +10,7 @@ class FormularioEliminarFavorito extends Formulario{
        return '	<fieldset>
 					Eliminar Favorito<br>
 					<input type="checkbox" name="condi" value="ok">Si<br>
-					<input type="submit" name="enviar" value="Desapuntar">
+					<input type="submit" name="enviar" value="Eliminar">
 				</fieldset>';
  	} 
 
