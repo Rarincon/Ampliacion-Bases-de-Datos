@@ -7,7 +7,6 @@ class FormularioAñadirComentario extends Formulario{
 
  	public function generaCamposFormulario(){
        return '	<fieldset>
-					<legend> Comentario </legend>
 					Comentario:		<br><input type="text" name="comentario"></br>
 					<br><input type="submit" name="enviar" value="Enviar"></br>
 				</fieldset>';

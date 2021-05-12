@@ -14,24 +14,26 @@
 			require("includes/comun/cabecera.php");
 			require("includes/comun/menu.php");
 		?>
-		<div id="contenido">
-		<div id="scrol">
+		<div id="contenidos">
 			<?php
+				echo "<table style='width:100%'>";
 				$listaZapatillas = SAZapatillas::listarZapatillasSA();
 				$numero = sizeof($listaZapatillas);
 				if($listaZapatillas == null || $numero == 0){
-					echo "No hay zapatillas en la base de datos";
+					echo "<tr><td>No hay zapatillas en la base de datos</td></tr>";
 				}
 				else{
-					echo"<p>Lista de zapatillas</p>";
+					echo"<tr><td><p>Lista de zapatillas</p></td></tr><tr>";
 					for ($i = 0; $i < $numero; $i++) {
+						if($i !=0 && $i%5==0)echo"</tr><tr>";
 						$pelicula = $listaZapatillas[$i];
-						echo "<p><img src = " . $pelicula->getPortadaZapatillas() . " width='180' height='120'>";
-						echo "<br><a href = 'vistaZapatillas.php?variable=" . $pelicula->getNombreZapatillas() ."'>" . $pelicula->getNombreZapatillas() . "</a></br></p>"; 
+						echo "<td style='width:20%'><p><br><a href = 'vistaZapatillas.php?variable=" . $pelicula->getNombreZapatillas() ."'><img src = " . $pelicula->getPortadaZapatillas() . " width='180' height='120'>";
+						//echo "<br><a href = 'vistaZapatillas.php?variable=" . $pelicula->getNombreZapatillas() ."'>" . $pelicula->getNombreZapatillas() . "</a></br></p></td>"; 
 					}
+					echo "</tr>";
 				}
+				echo "</table>";
 			?>
-		</div>
 		</div>
 		<?php
 			include("includes/comun/pie.php");
