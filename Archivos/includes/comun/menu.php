@@ -9,7 +9,7 @@
 	<div id="menu">
 		<table>
 			<tr>
-				<th><a href="inicio.php">Inicio</a></th>
+				<th><a href="index.php">Inicio</a></th>
 				<th><a href="listaZapatillas.php">Catalogo</a></th>		
 				<?php
 					if (isset($_SESSION["login"]) && ($_SESSION["login"]==true)) {

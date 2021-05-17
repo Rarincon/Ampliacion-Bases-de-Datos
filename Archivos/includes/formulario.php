@@ -41,7 +41,7 @@ abstract class Formulario {
 		else if($this->formId == "registro"){
 			$this->procesaFormulario();	
 		}
-		header('Location: inicio.php');
+		header('Location: index.php');
         exit();
     }
 	

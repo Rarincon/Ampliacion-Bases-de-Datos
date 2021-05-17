@@ -27,7 +27,7 @@
 				$_SESSION["login"] = false;
 				$_SESSION["admin"] = false;
 				echo "<h2> Ha cerrado la sesion, vuelva pronto</h2>";
-				header('Location: inicio.php');
+				header('Location: index.php');
                 exit();
 			?>
 
