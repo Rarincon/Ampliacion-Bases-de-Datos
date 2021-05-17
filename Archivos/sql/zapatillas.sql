@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-05-2021 a las 18:12:38
+-- Tiempo de generación: 17-05-2021 a las 17:10:44
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.2
 
@@ -40,10 +40,7 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`IdUsuario`, `Fecha`, `Comentario`, `IdZapatillas`, `IdComentario`) VALUES
-('admin', '0000-00-00', 'me encanto', 'Jordan', 1),
-('juan', '0000-00-00', 'manolo el del bombo', 'Jordan', 2),
-('juan', '0000-00-00', 'jose', 'Jordan', 3),
-('juan', '0000-00-00', 'pepe', 'Jordan', 4);
+('admin', '0000-00-00', 'Muy guapas, una compra excelente', 'Air max 97', 5);
 
 -- --------------------------------------------------------
 
@@ -56,6 +53,13 @@ CREATE TABLE `favoritos` (
   `IdZapatilla` varchar(200) NOT NULL,
   `IdFav` int(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `favoritos`
+--
+
+INSERT INTO `favoritos` (`IdUsuario`, `IdZapatilla`, `IdFav`) VALUES
+('admin', 'Air max 97', 3);
 
 -- --------------------------------------------------------
 
@@ -74,7 +78,17 @@ CREATE TABLE `marcas` (
 --
 
 INSERT INTO `marcas` (`Nombre`, `Marca`, `Tipo`) VALUES
-('Jordan', 'Nike', 'Futbol 11');
+('Air max 97', 'Nike', 'LifeStyle'),
+('Curry 10', 'Under Armour', 'Basket'),
+('Curry 5', 'Under Armour', 'Basket'),
+('Huarache', 'Nike', 'LifeStyle'),
+('Jordan', 'Nike', 'Futbol 11'),
+('Kobe Bryant 12', 'Nike', 'Basket'),
+('Mercurial', 'Nike', 'Futsal'),
+('old skool', 'Vans', 'LifeStyle'),
+('RS-X', 'Puma', 'LifeStyle'),
+('Super Sala', 'Adidas', 'Futsal'),
+('Yeezy Boost', 'Adidas', 'LifeStyle');
 
 -- --------------------------------------------------------
 
@@ -117,7 +131,16 @@ CREATE TABLE `zapatillas` (
 --
 
 INSERT INTO `zapatillas` (`Nombre`, `FechaLanzamiento`, `Portada`) VALUES
-('Jordan', '2021-04-11', 'img/portadaZapatillas/bugs-bunny-tenemos11593330363.jpg');
+('Air max 97', '2021-04-26', 'img/portadaZapatillas/airmax97.jpg'),
+('Curry 10', '2021-05-16', 'img/portadaZapatillas/underarmour2015.jpg'),
+('Curry 5', '2021-04-26', 'img/portadaZapatillas/curry5.jpg'),
+('Huarache', '2021-04-26', 'img/portadaZapatillas/nikehuarache.jpg'),
+('Kobe Bryant 12', '2021-05-14', 'img/portadaZapatillas/kobe12.jpg'),
+('Mercurial', '2021-05-18', 'img/portadaZapatillas/nikemercurial.jpg'),
+('old skool', '2021-05-01', 'img/portadaZapatillas/vans.jpg'),
+('RS-X', '2021-05-14', 'img/portadaZapatillas/pumarsx.jpg'),
+('Super Sala', '2021-05-03', 'img/portadaZapatillas/adidassupersala.jpg'),
+('Yeezy Boost', '2021-05-04', 'img/portadaZapatillas/adidasyeezyboost700.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -165,13 +188,13 @@ ALTER TABLE `zapatillas`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `IdComentario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IdComentario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritos`
 --
 ALTER TABLE `favoritos`
-  MODIFY `IdFav` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdFav` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
@@ -188,7 +211,7 @@ ALTER TABLE `comentarios`
 -- Filtros para la tabla `favoritos`
 --
 ALTER TABLE `favoritos`
-  ADD CONSTRAINT `favoritos_ibfk_1` FOREIGN KEY (`Idzapatilla`) REFERENCES `marcas` (`Nombre`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `favoritos_ibfk_1` FOREIGN KEY (`IdZapatilla`) REFERENCES `marcas` (`Nombre`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `favoritos_ibfk_2` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
