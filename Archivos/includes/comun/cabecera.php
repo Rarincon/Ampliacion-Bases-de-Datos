@@ -10,15 +10,9 @@
 </head>
 <body>
 	<div id="cabecera">
-		<div class="cabecera">
+		<div class="parrafo">
 			<?php
-				echo "Tienda de ZAPAS";
-				/*echo "<table class='center'>";
-				echo "<tr>";
-					echo "<td><a href='index.html' style='color:#FFFFFF;'>Inicio</a></td>";
-					echo "<td><a href='marcas.html' style='color:#FFFFFF;'>Marcas</a></td";
-					echo "<td><a href='categorias.html' style='color:#FFFFFF;'>Categorias</a></td>";
-				echo"</tr></table>";*/
+				echo "<FONT FACE='arial black' SIZE=40>ZAPATILLAS VICTOREM</font>";
 			?>
 		</div>
 	</div>

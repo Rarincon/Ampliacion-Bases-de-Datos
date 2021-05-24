@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div id="pie">
-		Practica ampliacion bases de datos</br>
+		Práctica Ampliación Bases de Datos</br>
 		Univerdidad Complutense</br>
 	</div>
 </body>
