@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-05-2021 a las 17:10:44
+-- Tiempo de generación: 25-05-2021 a las 11:52:02
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.2
 
@@ -40,7 +40,7 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`IdUsuario`, `Fecha`, `Comentario`, `IdZapatillas`, `IdComentario`) VALUES
-('admin', '0000-00-00', 'Muy guapas, una compra excelente', 'Air max 97', 5);
+('admin', '2021-05-25', 'Muy guapas', 'Curry 10', 7);
 
 -- --------------------------------------------------------
 
@@ -59,7 +59,8 @@ CREATE TABLE `favoritos` (
 --
 
 INSERT INTO `favoritos` (`IdUsuario`, `IdZapatilla`, `IdFav`) VALUES
-('admin', 'Air max 97', 3);
+('admin', 'Air max 97', 3),
+('admin', 'Curry 10', 4);
 
 -- --------------------------------------------------------
 
@@ -79,16 +80,26 @@ CREATE TABLE `marcas` (
 
 INSERT INTO `marcas` (`Nombre`, `Marca`, `Tipo`) VALUES
 ('Air max 97', 'Nike', 'LifeStyle'),
+('Air Zoom Cage', 'Nike', 'Tenis'),
 ('Curry 10', 'Under Armour', 'Basket'),
 ('Curry 5', 'Under Armour', 'Basket'),
+('Djokovic', 'Asics', 'Tenis'),
+('Federer', 'Nike', 'Tenis'),
 ('Huarache', 'Nike', 'LifeStyle'),
 ('Jordan', 'Nike', 'Futbol 11'),
 ('Kobe Bryant 12', 'Nike', 'Basket'),
+('Mbappe', 'Nike', 'Futbol11'),
 ('Mercurial', 'Nike', 'Futsal'),
+('Mercurial CR7', 'Nike', 'Futbol11'),
+('Messi', 'Adidas', 'Futbol11'),
+('Neymar Jr', 'Nike', 'Futbol11'),
 ('old skool', 'Vans', 'LifeStyle'),
+('Predator Zinedine Zidane', 'Adidas', 'Futbol11'),
 ('RS-X', 'Puma', 'LifeStyle'),
 ('Super Sala', 'Adidas', 'Futsal'),
-('Yeezy Boost', 'Adidas', 'LifeStyle');
+('Thiem', 'Adidas', 'Tenis'),
+('Yeezy Boost', 'Adidas', 'LifeStyle'),
+('Zverev', 'Adidas', 'Tenis');
 
 -- --------------------------------------------------------
 
@@ -111,8 +122,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`Id`, `Nombre`, `Contrasenia`, `FechaNacimiento`, `Correo`, `Tipo`) VALUES
 ('admin', 'admin', '$2y$10$mY1128X6HXrMSWbZ/Zv2p.SQY.CD6/7qfsGL3V8nfZTq5JpSgsYRq', '1999-02-09', 'admin', 'admin'),
-('juan', 'juan', '$2y$10$WKFUnvrM2kfPf26LTHL8tOJCdK2hb2I1nnabSobfVOGNQyOyBWTAG', '2021-04-02', 'eppepepe', 'user'),
-('m', 'm', '$2y$10$uII18z2PeQU6olQvsBgJueM22T4RQf302Rq6hB.NfJl0.DZbAWumi', '2021-05-07', 'eppepepe', 'user');
+('juan', 'Juan', '$2y$10$WKFUnvrM2kfPf26LTHL8tOJCdK2hb2I1nnabSobfVOGNQyOyBWTAG', '2021-04-02', 'juanito99@gmail.com', 'user');
 
 -- --------------------------------------------------------
 
@@ -132,15 +142,25 @@ CREATE TABLE `zapatillas` (
 
 INSERT INTO `zapatillas` (`Nombre`, `FechaLanzamiento`, `Portada`) VALUES
 ('Air max 97', '2021-04-26', 'img/portadaZapatillas/airmax97.jpg'),
+('Air Zoom Cage', '2021-04-26', 'img/portadaZapatillas/rafanadal.jpeg'),
 ('Curry 10', '2021-05-16', 'img/portadaZapatillas/underarmour2015.jpg'),
 ('Curry 5', '2021-04-26', 'img/portadaZapatillas/curry5.jpg'),
+('Djokovic', '2021-04-30', 'img/portadaZapatillas/djokovic.jpg'),
+('Federer', '2021-04-26', 'img/portadaZapatillas/federer.jpg'),
 ('Huarache', '2021-04-26', 'img/portadaZapatillas/nikehuarache.jpg'),
 ('Kobe Bryant 12', '2021-05-14', 'img/portadaZapatillas/kobe12.jpg'),
+('Mbappe', '2021-04-29', 'img/portadaZapatillas/mbappe.jpg'),
 ('Mercurial', '2021-05-18', 'img/portadaZapatillas/nikemercurial.jpg'),
+('Mercurial CR7', '2021-05-28', 'img/portadaZapatillas/cr7.jpg'),
+('Messi', '2021-04-26', 'img/portadaZapatillas/messi.jpg'),
+('Neymar Jr', '2021-05-01', 'img/portadaZapatillas/ney.jpg'),
 ('old skool', '2021-05-01', 'img/portadaZapatillas/vans.jpg'),
+('Predator Zinedine Zidane', '2021-05-02', 'img/portadaZapatillas/zz.jpg'),
 ('RS-X', '2021-05-14', 'img/portadaZapatillas/pumarsx.jpg'),
 ('Super Sala', '2021-05-03', 'img/portadaZapatillas/adidassupersala.jpg'),
-('Yeezy Boost', '2021-05-04', 'img/portadaZapatillas/adidasyeezyboost700.jpg');
+('Thiem', '2021-05-11', 'img/portadaZapatillas/thiem.jpg'),
+('Yeezy Boost', '2021-05-04', 'img/portadaZapatillas/adidasyeezyboost700.jpg'),
+('Zverev', '2021-05-02', 'img/portadaZapatillas/zverev.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -188,13 +208,13 @@ ALTER TABLE `zapatillas`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `IdComentario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `IdComentario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritos`
 --
 ALTER TABLE `favoritos`
-  MODIFY `IdFav` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `IdFav` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
