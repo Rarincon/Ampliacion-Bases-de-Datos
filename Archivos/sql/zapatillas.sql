@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2021 a las 11:52:02
+-- Tiempo de generación: 25-05-2021 a las 12:00:48
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.2
 
@@ -40,7 +40,15 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`IdUsuario`, `Fecha`, `Comentario`, `IdZapatillas`, `IdComentario`) VALUES
-('admin', '2021-05-25', 'Muy guapas', 'Curry 10', 7);
+('admin', '2021-05-25', 'Muy guapas', 'Curry 10', 7),
+('juan', '2021-05-25', 'Me las compraba ya', 'Air max 97', 8),
+('juan', '2021-05-25', 'Muchos goles metidos con estas zapatillas', 'Mercurial', 9),
+('juan', '2021-05-25', 'muy comodas', 'Huarache', 10),
+('juan', '2021-05-25', 'no soy argentino, pero me gustan', 'Zverev', 11),
+('raulete', '2021-05-25', 'MBAPEEEEE!!!', 'Mbappe', 12),
+('raulete', '2021-05-25', 'no estan mal', 'Yeezy Boost', 13),
+('robertou', '2021-05-25', 'muy flamas', 'Curry 10', 14),
+('robertou', '2021-05-25', 'de locos', 'RS-X', 15);
 
 -- --------------------------------------------------------
 
@@ -60,7 +68,14 @@ CREATE TABLE `favoritos` (
 
 INSERT INTO `favoritos` (`IdUsuario`, `IdZapatilla`, `IdFav`) VALUES
 ('admin', 'Air max 97', 3),
-('admin', 'Curry 10', 4);
+('admin', 'Curry 10', 4),
+('juan', 'Huarache', 5),
+('juan', 'Neymar Jr', 6),
+('juan', 'Zverev', 7),
+('raulete', 'Yeezy Boost', 8),
+('raulete', 'Air max 97', 9),
+('robertou', 'Curry 10', 10),
+('robertou', 'RS-X', 11);
 
 -- --------------------------------------------------------
 
@@ -122,7 +137,9 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`Id`, `Nombre`, `Contrasenia`, `FechaNacimiento`, `Correo`, `Tipo`) VALUES
 ('admin', 'admin', '$2y$10$mY1128X6HXrMSWbZ/Zv2p.SQY.CD6/7qfsGL3V8nfZTq5JpSgsYRq', '1999-02-09', 'admin', 'admin'),
-('juan', 'Juan', '$2y$10$WKFUnvrM2kfPf26LTHL8tOJCdK2hb2I1nnabSobfVOGNQyOyBWTAG', '2021-04-02', 'juanito99@gmail.com', 'user');
+('juan', 'Juan', '$2y$10$WKFUnvrM2kfPf26LTHL8tOJCdK2hb2I1nnabSobfVOGNQyOyBWTAG', '2021-04-02', 'juanito99@gmail.com', 'user'),
+('raulete', 'Raul', '$2y$10$eHeoTtg.8nJIGKBzEtA4ZOOC6Cn9k0EVZugcwahsWlYdwUson1uQS', '2000-10-14', 'rauelte00@gmail.com', 'user'),
+('robertou', 'Rober', '$2y$10$36Y7QBvsfI4pGJSEEYyDn.kbDoBzcZlG3AjJFGMPKZDLTHJP0ap/K', '2021-05-09', 'rober@gmail.com', 'user');
 
 -- --------------------------------------------------------
 
@@ -208,13 +225,13 @@ ALTER TABLE `zapatillas`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `IdComentario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `IdComentario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritos`
 --
 ALTER TABLE `favoritos`
-  MODIFY `IdFav` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IdFav` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas
