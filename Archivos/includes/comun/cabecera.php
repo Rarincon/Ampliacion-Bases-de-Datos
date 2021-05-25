@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div id="cabecera">
-		<div class="parrafo">
+		<div class="cabecera">
 			<?php
 				echo "<FONT FACE='arial black' SIZE=40>ZAPATILLAS VICTOREM</font>";
 			?>
