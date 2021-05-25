@@ -14,12 +14,13 @@ class FormularioAñadirComentario extends Formulario{
 
  	public function procesaFormularioComentario($idZapatillas){ 
         $errores = array();	
+		$hoy = date("Y-m-d");
 		$comentario = $_POST['comentario'];
 		if(empty($comentario)){
 			$errores[] = "El comentario no puede estar vacío";
 		}	
 		if(count($errores) == 0){
-			SAComentario::anadirComentarioSA($_SESSION["id"], time(), $comentario, $idZapatillas);
+			SAComentario::anadirComentarioSA($_SESSION["id"], $hoy, $comentario, $idZapatillas);
 		}
 		else{
 			return $errores;
